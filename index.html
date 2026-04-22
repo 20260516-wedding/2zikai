@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>二次会</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap');
+        body { font-family: 'Noto Sans JP', sans-serif; background-color: #f8f9fa; color: #333; }
+        .timeline-line::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #e2e8f0;
+            z-index: 0;
+        }
+        .step-active { border-left: 4px solid #d4af37; background: white; }
+        .speech-bubble {
+            position: relative;
+            background: #fff9eb;
+            border: 1px solid #ffeeba;
+            border-radius: 12px;
+            padding: 15px;
+        }
+    </style>
+</head>
+<body class="pb-20">
+
+    <!-- Header -->
+    <header class="bg-slate-800 text-white p-6 text-center shadow-lg">
+        <h1 class="text-xl font-bold">二次会</h1>
+        <p class="text-xs mt-2 text-slate-300">タップで各項目に飛べます</p>
+    </header>
+
+    <!-- Quick Navigation (Floating) -->
+    <div class="sticky top-0 z-50 bg-white/90 backdrop-blur-sm border-b overflow-x-auto whitespace-nowrap px-4 py-3 flex gap-4 text-sm font-medium shadow-sm">
+        <a href="#prep" class="text-amber-600">全体</a>
+        <a href="#nyuujou" class="text-amber-600">入場</a>
+        <a href="#kanpai" class="text-amber-600">乾杯</a>
+        <a href="#kandan01" class="text-amber-600">歓談①</a>
+        <a href="#game01" class="text-amber-600">ゲーム①</a>
+        <a href="#kandan02" class="text-amber-600">歓談②</a>
+        <a href="#game02" class="text-amber-600">ゲーム②</a>
+        <a href="#aisatsu" class="text-amber-600">挨拶</a>
+        <a href="#miokuri" class="text-amber-600">お見送り</a>
+    </div>
+
+    <div class="max-w-md mx-auto px-4 mt-6">
+
+        <!-- 0. 事前チェック -->
+        <section id="prep" class="mb-10">
+            <h2 class="flex items-center text-lg font-bold mb-4">
+                <i class="fa-solid fa-clipboard-check text-amber-500 mr-2"></i>全体の流れ
+            </h2>
+            <div class="bg-white rounded-xl p-4 shadow-sm border border-slate-100">
+                <ul>
+                    <li><span class="text-sm">　　19:30 ｜ みんな入場開始</span></li>
+                    <li><span class="text-sm">　　19:45 ｜ 新郎新婦入場</span></li>
+                    <li><span class="text-sm">　　19:50 ｜ 開会・乾杯の言葉</span></li>
+                    <li><span class="text-sm">　　19:55 ｜ 歓談（写真＆食事）</span></li>
+                    <li><span class="text-sm">　　20:05 ｜ 記念日ピタリ賞ゲーム</span></li>
+                    <li><span class="text-sm">　　20:40 ｜ 歓談（写真＆食事）</span></li>
+                    <li><span class="text-sm">　　20:55 ｜ ビンゴ</span></li>
+                    <li><span class="text-sm">　　21:25 ｜ 新郎新婦から挨拶・全体写真</span></li>
+                    <li><span class="text-sm">　　21:35 ｜ お見送り</span></li>
+                    <li><span class="text-sm">　　21:45 ｜ お開き</span></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 進行メインタイムライン -->
+        <h2 class="text-lg font-bold mb-6 flex items-center">
+            <i class="fa-solid fa-clock text-amber-500 mr-2"></i>細かい流れ
+        </h2>
+
+        <div class="relative timeline-line">
+
+            <!-- Step: 新郎新婦入場 -->
+            <div  id="nyuujou" class="relative z-10 pl-12 mb-10">
+                <div class="absolute left-0 w-10 h-10 bg-amber-100 border-2 border-amber-500 rounded-full flex items-center justify-center text-amber-600 font-bold">1</div>
+                <div class="bg-white p-5 rounded-xl shadow-sm border border-slate-100">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="font-bold text-slate-800">新郎新婦入場</h3>
+                        <span class="text-xs bg-amber-100 px-2 py-1 rounded text-amber-700 font-bold">19:45</span>
+                    </div>
+                    <p class="text-xs text-slate-500 mb-3"></p>                    
+                    <div class="p-3 border-l-2 border-amber-200 text-xs text-slate-600">
+                        <b>・LINEで準備の状況、入場のタイミングを都度連絡します！<br>・ゲスト入場後～新郎新婦入場までの時間は間繋いだりせず席でゆっくりしてもらって大丈夫です！</b>
+                    </div>
+                    <div class="speech-bubble text-sm leading-relaxed">
+                        「間もなく新郎新婦の入場です！あちらにご注目ください！」
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step: 開会・乾杯の言葉 -->
+            <div id="kanpai" class="relative z-10 pl-12 mb-10">
+                <div class="absolute left-0 w-10 h-10 bg-amber-500 border-2 border-white rounded-full flex items-center justify-center text-white font-bold shadow-md">2</div>
+                <div class="bg-white p-5 rounded-xl shadow-sm border border-slate-100">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="font-bold text-slate-800 text-lg">開会・乾杯の言葉</h3>
+                        <span class="text-xs bg-amber-100 px-2 py-1 rounded text-amber-700 font-bold">19:50</span>
+                    </div>
+                    <div class="speech-bubble text-sm leading-relaxed mb-4">
+                        「本日の司会を務めます新婦の高校時代の友人 後藤 と 福原 です！<br>まずは開会・乾杯のご発声を、新郎の大学時代のご友人 <b>かまさか</b>さん お願いします！」
+                    </div>
+                    <div class="bg-slate-50 p-3 rounded text-xs text-slate-600 italic">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step: 歓談（写真＆食事） -->
+            <div id="kandan01" class="relative z-10 pl-12 mb-10">
+                <div class="absolute left-0 w-10 h-10 bg-amber-100 border-2 border-amber-500 rounded-full flex items-center justify-center text-amber-600 font-bold">3</div>
+                <div class="bg-white p-5 rounded-xl shadow-sm border border-slate-100">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="font-bold text-slate-800">歓談①（写真＆食事）</h3>
+                        <span class="text-xs bg-amber-100 px-2 py-1 rounded text-amber-700 font-bold">19:50</span>
+                    </div>           
+                    <div class="p-3 border-l-2 border-amber-200 text-xs text-slate-600">
+                        <b>・新郎新婦がみんなのテーブルまわってお喋りと写真撮ります<br>・司会の二人も席に戻ってゆっくり過ごしてね<br>・私たちも時間気にするようにしますが、時間が来たら次のスケジュールに進めてほしいです！！</b>
+                    </div>
+                    <div class="speech-bubble text-sm mb-3">
+                        「それでは、新郎新婦がみなさんのテーブル順番に回りますので、お食事とお酒楽しみながらしばしご歓談ください！」
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step: 記念日ぴったりゲーム -->
+            <div id="game01" class="relative z-10 pl-12 mb-10">
+                <div class="absolute left-0 w-10 h-10 bg-pink-500 border-2 border-white rounded-full flex items-center justify-center text-white font-bold shadow-md">4</div>
+                <div class="bg-white p-5 rounded-xl shadow-sm border-2 border-pink-100">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="font-bold text-pink-700 text-lg">記念日ぴったりゲーム</h3>
+                        <span class="text-xs bg-pink-100 px-2 py-1 rounded text-pink-700 font-bold">20:05</span>
+                    </div> 
+                    <div class="speech-bubble text-sm mb-3 border-pink-200 bg-pink-50">
+                        「皆さま、ここからは景品をかけたゲームのお時間です！まずはルールをご説明します…」
+                    </div>
+                          
+                    <div class="p-3 border-l-2 border-amber-200 text-xs text-slate-600">
+                        <b>【ゲームのルール説明】<br>
+                            ・新郎新婦の記念日と、ゲストの皆さまの記念日を使い、日付がぴったり、または一番近い方に景品をプレゼントします！<br><br>
+
+                            ・進め方です！<br>まず、新郎新婦の記念日を発表します。<br>ただし、この時点では日付は隠してヒントのみお伝えします。<br>例えば、「9月の中旬が結婚記念日です！」といった形です。<br><br>
+
+                            ・次に、各グループで1名、<br>その時期に近い記念日を持っている方を代表として選んでください！<br>記念日は弱すぎなければなんでもOKです！<br>ご自身の誕生日はもちろん、<br>ご両親やお子さまの誕生日、推しの誕生日、結婚記念日、さらには「人生で一番大きな買い物をした日」など、それっぽければ大歓迎です！<br>代表の方は、テーブルのスケッチブックに<br>日付と内容（例：9月20日が自分の誕生日！など）を書いてください。<br><br>
+
+                            ・準備ができたら、各グループ順番に発表していただきます！<br>なお、あまりにも記念日の内容が弱い場合は、その場でジャッジが入ります！<br>新郎新婦が○×で判定しますので、「これはどうですか！？」と進めていきましょう！<br><br>
+
+                            ・すべての発表が終わったら、いよいよ新郎新婦の記念日の“正解の日付”を発表！<br>いちばん近かった方に景品をプレゼントします！<br><br>
+
+                            ・お題は全部で5問！<br>そして最後の問題の景品はディズニーペアチケットです！！<br>ぜひ最後まで全力でご参加ください！    
+                            
+                            
+
+
+                            <br><br><br><br><br><br>
+
+
+                            
+                            【１問目】<br>
+                            ・それでは第1問です！<br><br>お題は、「お二人が初めて出会った日」。<br>ヒントは…4月の上旬です！<br><br>4月上旬に近い記念日をお持ちの方を、各グループで1名選んで、ホワイトボードに記入してください。<br>それではスタート！<br><br>
+
+                            ・（お題発表含めて～シンキングタイム 2分）<br>（発表＆ジャッジタイム 2分）<br><br>はい、お時間です！それでは順番に発表していただきます。<br><br>
+
+                            ★例：「4月12日、自分の誕生日です！」<br>→いいですね、OKです！では次のグループ！<br><br>★例：「4月1日、唐揚げがすごく美味しかったので唐揚げ記念日です！」→これは絶妙ですね…新郎新婦にジャッジしていただきましょう！<br><br>
+
+                            ・（結果発表＆プレゼント 2分）<br>それでは出そろいましたので、お二人から正解の日付を発表していただきます！初めて会った日は…？((４月６日です！))<br><br>
+
+                            ・ということで、一番近かったのは…〇グループの方！おめでとうございます、景品ゲットです！<br>この問題の景品は、スターバックスのチケットです！<br>おめでとうございます！一言コメントをお願いします！<br><br>
+
+                            <br><br>
+
+                            【２問目】<br>
+                            お題：初めて二人で同じ趣味のライブに行った日<br>
+                            景品：おつまみセット<br>
+
+                            <br><br>
+
+                            【３問目】<br>
+                            お題：新婦が新郎をバリカンで坊主に刈り上げた日<br>
+                            景品：海軍カレーセット<br>
+
+                            <br><br>
+
+                            【４問目】<br>
+                            お題：婚約・結婚指輪を買った日<br>
+                            景品：お肉券<br>
+
+                            <br><br>
+
+                            【５問目】<br>
+                            お題：入籍した日<br>
+                            景品：ディズニーペアチケット<br>
+
+                            <br>
+
+
+                        </b>
+                    </div>
+                          
+
+
+                    <div class="space-y-2">
+                        <div class="flex items-center gap-2 text-xs font-bold text-slate-700 bg-slate-100 p-2 rounded">
+                            <i class="fa-solid fa-bolt text-amber-500"></i> ゲーム全体で約35分<br>・お題発表＆シンキングタイム 2分<br>・発表＆ジャッジタイム 2分<br>・結果発表＆プレゼント 2分<br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Step: 歓談（写真＆食事） -->
+            <div id="kandan02" class="relative z-10 pl-12 mb-10">
+                <div class="absolute left-0 w-10 h-10 bg-amber-100 border-2 border-amber-500 rounded-full flex items-center justify-center text-amber-600 font-bold">5</div>
+                <div class="bg-white p-5 rounded-xl shadow-sm border border-slate-100">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="font-bold text-slate-800">歓談②（写真＆食事）</h3>
+                        <span class="text-xs bg-amber-100 px-2 py-1 rounded text-amber-700 font-bold">20:40</span>
+                    </div>           
+                    <div class="p-3 border-l-2 border-amber-200 text-xs text-slate-600">
+                        <b>・新郎新婦がみんなのテーブルまわってお喋りと写真撮ります<br>・司会の二人も席に戻ってゆっくり過ごしてね<br>・私たちも時間気にするようにしますが、時間が来たら次のスケジュールに進めてほしいです！！</b>
+                    </div>
+                    <div class="speech-bubble text-sm mb-3">
+                        「それでは、ここでまた新郎新婦がみなさんのテーブル順番に回りますので、お食事とお酒楽しみながらしばしご歓談ください！」
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Step: ビンゴ -->
+            <div id="game02" class="relative z-10 pl-12 mb-10">
+                <div class="absolute left-0 w-10 h-10 bg-pink-500 border-2 border-white rounded-full flex items-center justify-center text-white font-bold shadow-md">6</div>
+                <div class="bg-white p-5 rounded-xl shadow-sm border-2 border-pink-100">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="font-bold text-pink-700 text-lg">ビンゴ</h3>
+                        <span class="text-xs bg-pink-100 px-2 py-1 rounded text-pink-700 font-bold">20:55</span>
+                    </div> 
+                    <div class="speech-bubble text-sm mb-3 border-pink-200 bg-pink-50">
+                        「皆さま、続きましてビンゴのお時間です！」
+                    </div>
+                          
+                    <div class="p-3 border-l-2 border-amber-200 text-xs text-slate-600">
+                        <b>【ゲーム進行】<br>
+                            ・受付でお配りしたビンゴカードをお手元にご用意ください。<br><br>
+
+                            ・これから、新郎新婦が数字の書かれた紙が入ったボックスを持って、各テーブルを回ります。((司会の二人も一緒に回ってほしい！))<br>皆さまには順番に数字を引いていただきます！<br><br>
+
+                            ・景品は上位20名様分ご用意しています！<br>ビンゴになった方は、元気よく手を挙げてお知らせください！<br>それでは早速、スタート！<br><br>
+                        </b>
+                    </div>                      
+                    <div class="space-y-2">
+                        <div class="flex items-center gap-2 text-xs font-bold text-slate-700 bg-slate-100 p-2 rounded">
+                            <i class="fa-solid fa-bolt text-amber-500"></i> ビンゴ全体で約20分
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Step: 新郎新婦から挨拶・全体写真 -->
+            <div id="aisatsu" class="relative z-10 pl-12 mb-10">
+                <div class="absolute left-0 w-10 h-10 bg-amber-100 border-2 border-amber-500 rounded-full flex items-center justify-center text-amber-600 font-bold">7</div>
+                <div class="bg-white p-5 rounded-xl shadow-sm border border-slate-100">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="font-bold text-slate-800">新郎新婦から挨拶・全体写真</h3>
+                        <span class="text-xs bg-amber-100 px-2 py-1 rounded text-amber-700 font-bold">21:25</span>
+                    </div>           
+                    <div class="p-3 border-l-2 border-amber-200 text-xs text-slate-600">
+                        <b>・当日の様子見て全体写真撮影の場所決める</b>
+                    </div>
+                    <div class="speech-bubble text-sm mb-3">
+                        「そろそろお開きの時間も近づいてきましたので、ここで、新郎新婦から皆さまへ一言ご挨拶です！」<br><br>
+                        「集合写真を撮影いたします！このあたりにギュッと集まってくださーい！」
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step: お見送り -->
+            <div id="miokuri" class="relative z-10 pl-12 mb-10">
+                <div class="absolute left-0 w-10 h-10 bg-amber-500 border-2 border-white rounded-full flex items-center justify-center text-white font-bold shadow-md">8</div>
+                <div class="bg-white p-5 rounded-xl shadow-sm border border-slate-100">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="font-bold text-slate-800 text-lg">お見送り</h3>
+                        <span class="text-xs bg-amber-100 px-2 py-1 rounded text-amber-700 font-bold">21:35</span>
+                    </div>
+                    <div class="speech-bubble text-sm leading-relaxed mb-4">
+                        「以上をもちまして、お開きといたします！お出口でお二人がお待ちしております。お忘れ物の無いようにお気を付けください。」
+                    </div>
+                    <div class="bg-slate-50 p-3 rounded text-xs text-slate-600 italic">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- その他メモ -->
+        <section id="contact" class="mt-10 mb-20 bg-slate-100 p-6 rounded-2xl border-2 border-dashed border-slate-300">
+            <h2 class="text-center font-bold text-slate-700 mb-4 italic">memo</h2>
+            <div class="flex flex-col gap-3">
+                <div class="flex justify-between items-center bg-white p-3 rounded-lg shadow-sm">
+                    <span class="text-xs font-bold">BGM:シャニマス オフボ Disc3</span>
+                </div>
+                <div class="flex justify-between items-center bg-white p-3 rounded-lg shadow-sm">
+                    <span class="text-xs font-bold">司会：後藤・ぽん<br>受付：はらさわさん・〇〇さん</span>
+                </div>
+                <div class="flex justify-between items-center bg-white p-3 rounded-lg shadow-sm">
+                    <span class="text-xs font-bold">受付にて<br>①現金で会費集金<br>②名簿をもとにテーブル番号知らせる<br>③ビンゴの紙渡す</span>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Footer Status Bar -->
+    <div class="fixed bottom-0 left-0 right-0 bg-white border-t p-2 flex justify-around items-center text-[10px] text-slate-400 font-medium uppercase tracking-widest">
+        <span>Wedding Party Manual</span>
+        <span class="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></span>
+        <span>Version 1.0</span>
+    </div>
+
+</body>
+</html>
